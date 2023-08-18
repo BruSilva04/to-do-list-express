@@ -1,6 +1,9 @@
 // biblioteca do express
 const express = require('express')
 const checkListRouter = require('./src/routes/checklist')
+// chamando as confg no app
+require('./config/database');
+
 // chamando o app para ter disponivel todos os metodos dentro do app
 const app = express()
 // 'use' para usar o Middlewares
@@ -10,6 +13,7 @@ const app = express()
 app.use(express.json())
 
 app.use('/checklists',checkListRouter)
+
 
 
 // dando start passando a porta para ele ficar ouvindo 
